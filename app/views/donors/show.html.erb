@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <br>
+    <div id= "donor_container">
+    <% if flash[:donation_errors]%>
+      <div id= "donation_errors">
+          <% flash[:donation_errors].each do |msg| %>
+          <span> Error: <%= msg %></span>
+          <% end %>
+      </div>
+    <% end %>
+
+    <br><p>Hello <%=@donor.first_name%> <%=@donor.last_name %>!</p>
+      <span id = "amtbal">You have $<%=@donor.money_available %> available to donate</span>
+    <h2> Charities seeking donations</h2>
+      <table>
+          <thead>
+            <tr>
+              <th>Beneficiary name</th>
+              <th>Charity</th>
+              <th>Charitable cause</th>
+              <th>Amount Needed</th>
+              <th>Amount Raised</th>
+              <th>Donate</th>
+            </tr>
+              </thead>
+              <tbody>
+                <% @charityReps.each do |b| %>
+                  <% if b.money_requested != 0 %>
+                    <tr>
+                      <td><%=b.first_name%> <%=b.last_name %></a></td>
+                      <td><%=b.charity_name%></td>
+                      <td><%=b.charitable_cause%></td>
+                      <td>$ <%=b.money_requested%></td>
+                      <% if b.money_raised == nil%>
+                        <td>$ 0</td>
+                      <% else %>
+                        <td>$ <%=b.money_raised%></td>
+                      <% end %>
+                      <td>
+                        <form action = '/<%=@donor.id%>/donations' method = "post">
+                          $<input id="donate_amt" type="number" name="money_raised" min="5" max="10000" step="5" value= "25">
+                          <input type= "hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                          <input type="hidden" name="charityRep_id" value='<%=b.id %>'>
+                          <input id="donate" type = "submit" value= "OK"><br>
+                        </form>
+                      </td>
+                    </tr>
+                  <% end %>
+                <% end %>
+            </tbody>
+        </table>
+      <h2>Charities you have donated to</h2>
+        <table>
+            <thead>
+              <tr>
+                <th>Beneficiary name</th>
+                <th>Email</th>
+                <th>Charity</th>
+                <th>Charitable cause</th>
+                <th>Amount Needed</th>
+                <th>Amount Raised</th>
+                <th>Amount Donated</th>
+                <th>Date</th>
+              </tr>
+                </thead>
+                <tbody>
+                  <% @displaydonations.each do |d| %>
+                      <tr>
+                        <td><%=d.charity_rep.first_name%> <%=d.charity_rep.last_name %></td>
+                        <td><%=d.charity_rep.email%></td>
+                        <td><%=d.charity_rep.charity_name%></td>
+                        <td><%=d.charity_rep.charitable_cause%></td>
+                        <td>$ <%=d.charity_rep.money_requested%></td>
+                        <td>$ <%=d.charity_rep.money_raised%></td>
+                        <td>$ <%=d.amount%></td>
+                        <td><%=d.created_at.strftime("%m/%d/%Y")%></td>
+                      </tr>
+                  <% end %>
+              </tbody>
+          </table>
+      </div>
+  </body>
+</html>

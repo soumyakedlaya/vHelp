@@ -1,3 +1,78 @@
-// Place all the styles related to the donors controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#donor_container{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+#donation_errors{
+  color: red;
+  font-size: 20px;
+}
+
+p{
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: lighter;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#amtbal{
+  font-size: 20px;
+  padding-left: 20px;
+  color: red;
+}
+
+#donor_container h2{
+  text-align: center;
+  -webkit-margin-after:0;
+}
+
+#donor_container table {
+    border-collapse: collapse;
+    width: 100%;
+    padding-left: 10px;
+    border: solid;
+    border-color: lightgray;
+    border-width: thin;
+    margin-bottom: 5%;
+    margin-top: 5px;
+}
+
+#donor_container th, #donor_container td {
+    text-align: left;
+    padding: 8px;
+    font-weight: lighter;
+    font-size: 13px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+tr:hover{background-color:lightgrey}
+
+th {
+  background-color: rgba(243, 109, 67, 0.78);
+  color: white;
+}
+
+tr{
+  font-size: 20px;
+}
+#donate_amt{
+font-size: 13px;
+width: 70%;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+font-family: sans-serif;
+font-weight: lighter;
+}
+
+#donate{
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 50%;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: lighter;
+}

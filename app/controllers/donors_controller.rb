@@ -53,49 +53,49 @@ class DonorsController < ApplicationController
     end
   end
 
-#   #query db for various info needed to display on page
-#   def show
-#     #renders views/donors/show.html.erb automatically
-#     @charityReps = CharityRep.all
-#     @donor = current_user
-#     @displayloans = Donor.find(current_user.id).donations
-#   end
-#
-# # when donor user clicks donate on form, find the charityRep's user id in db
-# #create entry in donation model with charityRep_id, donor_id and $amount IF amount is less than donor's account balance
-# #if amount is greater than donor's acct balance, flash error message and do not save in db
-#   def donation
-#     @charityRep = CharityRep.find(params[:charityRep_id])
-#     amount = params[:money_raised].to_i
-#
-#     if amount <= current_user.money_available
-#       donation = donation.create(donor: current_user, charityRep:@charityRep, amount: amount)
-#
-#       if @charityRep.money_raised == nil
-#         # if charityRep's money_raised = nil, update amt of money_raised in db with amt the donor donates, update amt of money_requested
-#         updated_money_raised_amt = amount
-#         updated_money_amt = @charityRep.money_requested - amount
-#         @charityRep.update(money_raised: updated_money_raised_amt, money_requested: updated_money_amt)
-#       else
-#         # if charityRep has already raised money, update amt of money_raised, update amt of money_requested
-#         updated_money_raised_amt = @charityRep.money_raised + amount
-#         updated_money_amt = @charityRep.money_requested - amount
-#         @charityRep.update(money_raised: updated_money_raised_amt, money_requested: updated_money_amt)
-#       end
-#
-#       #update donor's account balance
-#       updated_acctbal = current_user.money_available - amount
-#       current_user.update(money_available: updated_acctbal)
-#
-#     elsif current_user.money_available == 0
-#       initialize_donationErrors_flash
-#       flash[:donation_errors] << "You can no longer donate since your account balance is 0"
-#     else
-#       initialize_donationErrors_flash
-#       flash[:donation_errors] << "Not enough money in your account. Please select a lower amount"
-#     end
-#     redirect_to "/donor/#{current_user.id}"
-#   end
+  #query db for various info needed to display on page
+  def show
+    #renders views/donors/show.html.erb automatically
+    @charityReps = CharityRep.all
+    @donor = current_user
+    @displaydonations = Donor.find(current_user.id).donations
+  end
+
+# when donor user clicks donate on form, find the charityRep's user id in db
+#create entry in donation model with charityRep_id, donor_id and $amount IF amount is less than donor's account balance
+#if amount is greater than donor's acct balance, flash error message and do not save in db
+  def donation
+    @charityRep = CharityRep.find(params[:charityRep_id])
+    amount = params[:money_raised].to_i
+
+    if amount <= current_user.money_available
+      donation = Donation.create(donor: current_user, charity_rep:@charityRep, amount: amount)
+
+      if @charityRep.money_raised == nil
+        # if charityRep's money_raised = nil, update amt of money_raised in db with amt the donor donates, update amt of money_requested
+        updated_money_raised_amt = amount
+        updated_money_amt = @charityRep.money_requested - amount
+        @charityRep.update(money_raised: updated_money_raised_amt, money_requested: updated_money_amt)
+      else
+        # if charityRep has already raised money, update amt of money_raised, update amt of money_requested
+        updated_money_raised_amt = @charityRep.money_raised + amount
+        updated_money_amt = @charityRep.money_requested - amount
+        @charityRep.update(money_raised: updated_money_raised_amt, money_requested: updated_money_amt)
+      end
+
+      #update donor's account balance
+      updated_acctbal = current_user.money_available - amount
+      current_user.update(money_available: updated_acctbal)
+
+    elsif current_user.money_available == 0
+      initialize_donationErrors_flash
+      flash[:donation_errors] << "You can no longer donate since your account balance is 0"
+    else
+      initialize_donationErrors_flash
+      flash[:donation_errors] << "Not enough money in your account. Please select a lower amount"
+    end
+    redirect_to "/donor/#{current_user.id}"
+  end
 
   private
   def donor_params

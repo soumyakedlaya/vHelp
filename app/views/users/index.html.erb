@@ -12,7 +12,7 @@
     <!-- Heading, tagline, donor_reg errors, charityRep_reg errors -->
     <div id= "container">
       <h1> Welcome to vHelp! </h1>
-      <h2 id= "tagline"> Connecting donors with charities... </h2>
+      <h2 id= "tagline"> Connecting donors with charities</h2>
       <% if flash[:donor_reg_errors]%>
         <div id= "donor_reg_errors" class="ui-front">
             <span> Please correct <%= flash[:errors_count] %> error(s) on this page.</span>
@@ -49,7 +49,7 @@
             <input type="text" name="donor[email]" placeholder="Email Address*">
             <input type="password" name="donor[password]" placeholder="Password*">
             <input type="number" name="donor[money_available]" placeholder="$ available*" min="25" max="10000" step="5">
-            <input type = "submit" value= "Register as a Donor">
+            <input id="reg_as_donor" type = "submit" value= "Register as a Donor">
             <a href= '/login'>Already a member?</a>
           </form>
         </div>

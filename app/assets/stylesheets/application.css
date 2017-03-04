@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+
+#logout{
+  float: right;
+  width: 6%;
+  background-color: #3F51B5;
+  margin-right: 10px;
+  display: block;
+  color: white;
+  margin-left: 15%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: small;
+  font-family: sans-serif;
+  font-weight: lighter;
+  padding: 5px;
+}
