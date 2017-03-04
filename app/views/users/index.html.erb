@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script   src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"   integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="   crossorigin="anonymous"></script>
+
+    <title>vHelp</title>
+  </head>
+  <body>
+    <!-- Heading, tagline, donor_reg errors, charityRep_reg errors -->
+    <div id= "container">
+      <h1> Welcome to vHelp! </h1>
+      <h2 id= "tagline"> Connecting donors with charities... </h2>
+      <% if flash[:donor_reg_errors]%>
+        <div id= "donor_reg_errors" class="ui-front">
+            <span> Please correct <%= flash[:errors_count] %> error(s) on this page.</span>
+            <% flash[:donor_reg_errors].each do |msg| %>
+              <li><span><%= msg %></span></li>
+            <% end %>
+        </div>
+      <% end %>
+
+      <% if flash[:charityRep_reg_errors]%>
+        <div id= "charityRep_reg_errors" class="ui-front">
+            <span> Please correct <%= flash[:errors_count] %> error(s) on this page.</span>
+            <% flash[:charityRep_reg_errors].each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+        </div>
+      <% end %>
+
+      <!-- Background image, overlaying text, form buttons, donor_reg form and charityRep form -->
+      <div id = "topbox">
+        <div id = "topbox_text">
+          <h2><span>Is your charity seeking donations?<br>
+            or
+          <br>Would you like to be a donor?</span></h2><br>
+          <button id="donor_signup">Sign up as donor</button>
+          <button id= "charityRep_signup">Sign up your charity</button>
+          <button id="signin"><a href = '/login'>Sign In</a></button>
+        </div>
+        <div id= "donor" class="ui-front">
+          <form action = "/donors" method = "post">
+            <input type= "hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input id= len_fn type="text" name="donor[first_name]" placeholder="First Name*">
+            <input type="text" name="donor[last_name]" placeholder="Last Name*">
+            <input type="text" name="donor[email]" placeholder="Email Address*">
+            <input type="password" name="donor[password]" placeholder="Password*">
+            <input type="number" name="donor[money_available]" placeholder="$ available*" min="25" max="10000" step="5">
+            <input type = "submit" value= "Register as a Donor">
+            <a href= '/login'>Already a member?</a>
+          </form>
+        </div>
+        <div id="charityRep" class="ui-front">
+          <form action = "/charityReps" method = "post">
+            <input type= "hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input id= "bor_fn" type="text" name="charityRep[first_name]" placeholder="First Name">
+            <input type="text" name="charityRep[last_name]" placeholder="Last Name">
+            <input type="text" name="charityRep[email]" placeholder= "Email Address">
+            <input type="password" name="charityRep[password]" placeholder= "Password">
+            <input type="text" name="charityRep[charity_name]" placeholder= "Name of Charity">
+            <input type="text" name="charityRep[charitable_cause]" placeholder= "Charitable cause">
+            <input type="number" name="charityRep[money_requested]" placeholder= "Requesting $" min="5" max="10000" step="5">
+            <input type = "submit" value= "Register as a Beneficiary">
+            <a href= '/login'>Already a member?</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

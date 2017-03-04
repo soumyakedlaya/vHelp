@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id= "charityRep_container">
+      <p>Hello <%=@charityRep.first_name %> <%=@charityRep.last_name %>!</p>
+      <span id = "amtrequested">Amount Needed for <%=@charityRep.charity_name %>: $ <%=@charityRep.money_requested %></span><br>
+      <br><span id = "amtraised">
+        Amount Raised: $
+        <% if @charityRep.money_raised == nil%>
+          0
+        <% else %>
+          <%=@charityRep.money_raised %>
+        <% end%>
+        </span>
+      <h2> Donors who have contributed to your charity </h2>
+      <table>
+          <thead>
+            <tr>
+              <th>Donor</th>
+              <th>Email</th>
+              <th>Donation Amount</th>
+              <th>Date</th>
+            </tr>
+              </thead>
+              <tbody>
+                  <% @charityRep.donations.each do |t| %>
+                      <tr>
+                        <td><%=t.donor.first_name%> <%=t.donor.last_name %></a></td>
+                        <td><%=t.donor.email%></a></td>
+                        <td>$ <%=t.amount%></td>
+                        <td><%=t.created_at.strftime("%m/%d/%Y")%></td>
+                      </tr>
+                  <% end %>
+              </tbody>
+          </table>
+        </div>
+  </body>
+</html>
