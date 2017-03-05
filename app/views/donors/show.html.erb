@@ -10,7 +10,7 @@
     <% if flash[:donation_errors]%>
       <div id= "donation_errors">
           <% flash[:donation_errors].each do |msg| %>
-          <span> Error: <%= msg %></span>
+          <span>Sorry, <%= msg %></span>
           <% end %>
       </div>
     <% end %>
@@ -21,11 +21,11 @@
       <table>
           <thead>
             <tr>
-              <th>Beneficiary name</th>
-              <th>Charity</th>
-              <th>Charitable cause</th>
-              <th>Amount Needed</th>
-              <th>Amount Raised</th>
+              <th id="charitytable_ben_name">Beneficiary name</th>
+              <th id="charitytable_charity">Charity</th>
+              <th id="charitytable_charitable_cause">Charitable cause</th>
+              <th id="charitytable_amt_needed">Amount Needed</th>
+              <th id="charitytable_amt_raised">Amount Raised</th>
               <th>Donate</th>
             </tr>
               </thead>
@@ -44,7 +44,7 @@
                       <% end %>
                       <td>
                         <form action = '/<%=@donor.id%>/donations' method = "post">
-                          $<input id="donate_amt" type="number" name="money_raised" min="5" max="10000" step="5" value= "25">
+                          $<input id="donate_amt" type="number" name="money_raised" min="25" max="10000" step="5" value= "25">
                           <input type= "hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                           <input type="hidden" name="charityRep_id" value='<%=b.id %>'>
                           <input id="donate" type = "submit" value= "OK"><br>
@@ -59,14 +59,14 @@
         <table>
             <thead>
               <tr>
-                <th>Beneficiary name</th>
-                <th>Email</th>
-                <th>Charity</th>
-                <th>Charitable cause</th>
-                <th>Amount Needed</th>
-                <th>Amount Raised</th>
-                <th>Amount Donated</th>
-                <th>Date</th>
+                <th id="donationtable_ben_name">Beneficiary name</th>
+                <th id="donationtable_email">Email</th>
+                <th id="donationtable_charity">Charity</th>
+                <th id="donationtable_charitable_cause">Charitable cause</th>
+                <th id="donationtable_amt_needed">Amount Needed</th>
+                <th id="donationtable_amt_raised">Amount Raised</th>
+                <th id="donationtable_amt_donated">Amount Donated</th>
+                <th id="donationtable_date">Date</th>
               </tr>
                 </thead>
                 <tbody>

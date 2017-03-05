@@ -89,7 +89,7 @@ class DonorsController < ApplicationController
 
     elsif current_user.money_available == 0
       initialize_donationErrors_flash
-      flash[:donation_errors] << "You can no longer donate since your account balance is 0"
+      flash[:donation_errors] << "you can no longer donate since your account balance is 0!"
     else
       initialize_donationErrors_flash
       flash[:donation_errors] << "Not enough money in your account. Please select a lower amount"
