@@ -7,13 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if current_user %>
-    <form action='/sessions' method='post'>
-      <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
-      <input type='hidden' name='_method' value='delete'>
-      <input id="logout" type='submit' value='Log Out'>
-    </form>
-  <% end %>
+  <div id="logo">
+    <img src="/assets/charities.gif" alt="Charity logo">
+    <h1> vHelp </h1>
+  </div>
+  <div id="logout">
+    <% if current_user %>
+      <form action='/sessions' method='post'>
+        <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+        <input type='hidden' name='_method' value='delete'>
+        <input id="logout_button" type='submit' value='Log Out'>
+      </form>
+    <% end %>
+  </div>
 
 <%= yield %>
 

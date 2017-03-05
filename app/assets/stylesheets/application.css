@@ -14,17 +14,31 @@
  *= require_self
  */
 
+ img{
+   width: 100px;
+   height: 100px;
+ }
 
-#logout{
-  float: right;
+ #logo h1{
+   -webkit-margin-before: 0;
+   -webkit-margin-after: 0;
+   // padding-top: 40px;
+   text-align: center;
+   font-size: 50px;
+   display: inline;
+   color: green;
+ }
+
+#logout_button{
+  /*float: right;*/
   width: 6%;
   background-color: #3F51B5;
-  margin-right: 10px;
-  display: block;
+  /*margin-right: 10px;*/
+  /*display: block;*/
   color: white;
-  margin-left: 15%;
+  /*margin-left: 15%;
   margin-bottom: 10px;
-  margin-top: 5px;
+  margin-top: 5px;*/
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -32,4 +46,7 @@
   font-family: sans-serif;
   font-weight: lighter;
   padding: 5px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
 }

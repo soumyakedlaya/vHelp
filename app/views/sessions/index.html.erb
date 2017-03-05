@@ -6,12 +6,11 @@
   </head>
   <body>
     <div id= "login_container">
-      <h1>Online Donation </h1>
         <% if flash[:login_errors]%>
           <div id= "login_errors">
               <span> Please correct <%= flash[:errors_count] %> error(s) on this page.</span>
               <% flash[:login_errors].each do |msg| %>
-                <li><%= msg %></li>
+                <li><span><%= msg %></span></li>
               <% end %>
           </div>
         <% end %>
