@@ -21,6 +21,7 @@ class CharityRepsController < ApplicationController
         flash[:errors_count] += 1
       end
 
+      # checks if email entered matches regex pattern. If there is not a complete match, returns nil.
       if ((@charityRep.email =~ valid_email_regex) == nil)
         flash[:charityRep_reg_errors] << "Enter a valid email address"
         flash[:errors_count] += 1

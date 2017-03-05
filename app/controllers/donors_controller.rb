@@ -22,7 +22,7 @@ class DonorsController < ApplicationController
         flash[:errors_count] += 1
       end
 
-      # checks if email entered matches regex pattern. If there is not a complete match, returns nil. if there is a match, returns the index of the first match
+      # checks if email entered matches regex pattern. If there is not a complete match, returns nil.
       if ((@donor.email =~ valid_email_regex) == nil)
         flash[:donor_reg_errors] << "Enter a valid email address"
         flash[:errors_count] += 1
@@ -92,7 +92,7 @@ class DonorsController < ApplicationController
       flash[:donation_errors] << "you can no longer donate since your account balance is 0!"
     else
       initialize_donationErrors_flash
-      flash[:donation_errors] << "Not enough money in your account. Please select a lower amount"
+      flash[:donation_errors] << "there is not enough money in your account! Please select a lower amount."
     end
     redirect_to "/donor/#{current_user.id}"
   end

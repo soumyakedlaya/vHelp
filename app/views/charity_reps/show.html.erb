@@ -7,13 +7,13 @@
   <body>
     <div id= "charityRep_container">
       <p>Hello <%=@charityRep.first_name %> <%=@charityRep.last_name %>!</p>
-      <span id = "amtrequested">Amount Needed for <%=@charityRep.charity_name %>: $ <%=@charityRep.money_requested %></span><br>
+      <span id = "amtrequested">Amount needed for <%=@charityRep.charity_name %>: $<%=@charityRep.money_requested %></span><br>
       <br><span id = "amtraised">
-        Amount Raised: $
+        Amount raised:
         <% if @charityRep.money_raised == nil%>
-          0
+          $0
         <% else %>
-          <%=@charityRep.money_raised %>
+          $<%=@charityRep.money_raised %>
         <% end%>
         </span>
       <h2> Donors who have contributed to your charity </h2>

@@ -39,6 +39,7 @@ th, td {
     font-weight: lighter;
 }
 
+//Change background color to lightgrey when hover over table elements
 tr:nth-child(even){background-color: #f2f2f2}
 tr:hover{background-color:lightgrey}
 
@@ -48,7 +49,7 @@ tr:hover{background-color:lightgrey}
 }
 
 tr{
-  font-size: 20px;
+  font-size: 15px;
 }
 
 th {
