@@ -1,7 +1,7 @@
 == README
 
 Please go to this URL to view the app:
-http://35.166.29.158
+http://35.165.69.187
 
 1. Sign up as a donor or sign up a charity you represent.
 2. If you already have an account, click sign in.
