@@ -34,8 +34,8 @@
                   <% if b.money_requested != 0 %>
                     <tr>
                       <td><%=b.first_name%> <%=b.last_name %></a></td>
-                      <td><%=b.charity_name%></td>
-                      <td><%=b.charitable_cause%></td>
+                      <td id= "charitytable_charity_td"><%=b.charity_name%></td>
+                      <td id= "charitytable_charitable_cause_td"><%=b.charitable_cause%></td>
                       <td>$ <%=b.money_requested%></td>
                       <% if b.money_raised == nil%>
                         <td>$ 0</td>
@@ -73,9 +73,9 @@
                   <% @displaydonations.each do |d| %>
                       <tr>
                         <td><%=d.charity_rep.first_name%> <%=d.charity_rep.last_name %></td>
-                        <td><%=d.charity_rep.email%></td>
-                        <td><%=d.charity_rep.charity_name%></td>
-                        <td><%=d.charity_rep.charitable_cause%></td>
+                        <td id= "donationtable_email_td"><%=d.charity_rep.email%></td>
+                        <td id= "donationtable_charity_td"><%=d.charity_rep.charity_name%></td>
+                        <td id= "donationtable_charitable_cause_td"><%=d.charity_rep.charitable_cause%></td>
                         <td>$ <%=d.charity_rep.money_requested%></td>
                         <td>$ <%=d.charity_rep.money_raised%></td>
                         <td>$ <%=d.amount%></td>
