@@ -34,7 +34,7 @@
         <div id = "topbox_text">
           <h2><span>Is your charity seeking donations?<br>
             or
-          <br>Would you like to be a donor?</span></h2><br>
+          <br>Would you like to be a donor?</span></h2>
           <button id="donor_signup">Sign up as donor</button>
           <button id= "charityRep_signup">Sign up your charity</button>
           <button id="signin"><a href = '/login'>Sign In</a></button>
@@ -46,7 +46,7 @@
             <input type="text" name="donor[last_name]" placeholder="Last Name*">
             <input type="text" name="donor[email]" placeholder="Email Address*">
             <input type="password" name="donor[password]" placeholder="Password*">
-            <input type="number" name="donor[money_available]" placeholder="$ available*" min="25" max="10000" step="5">
+            <input type="number" name="donor[money_available]" placeholder="Total $ to donate*" min="25" max="10000" step="5">
             <input id="reg_as_donor" type = "submit" value= "Register as a Donor">
             <a href= '/login'>Already a member?</a>
           </form>
@@ -54,13 +54,13 @@
         <div id="charityRep" class="ui-front">
           <form action = "/charityReps" method = "post">
             <input type= "hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <input id= "bor_fn" type="text" name="charityRep[first_name]" placeholder="First Name">
-            <input type="text" name="charityRep[last_name]" placeholder="Last Name">
-            <input type="text" name="charityRep[email]" placeholder= "Email Address">
-            <input type="password" name="charityRep[password]" placeholder= "Password">
-            <input type="text" name="charityRep[charity_name]" placeholder= "Name of Charity">
-            <input type="text" name="charityRep[charitable_cause]" placeholder= "Charitable cause">
-            <input type="number" name="charityRep[money_requested]" placeholder= "Requesting $" min="5" max="10000" step="5">
+            <input id= "bor_fn" type="text" name="charityRep[first_name]" placeholder="First Name*">
+            <input type="text" name="charityRep[last_name]" placeholder="Last Name*">
+            <input type="text" name="charityRep[email]" placeholder= "Email Address*">
+            <input type="password" name="charityRep[password]" placeholder= "Password*">
+            <input type="text" name="charityRep[charity_name]" placeholder= "Name of Charity*">
+            <input type="text" name="charityRep[charitable_cause]" placeholder= "Charitable cause*">
+            <input type="number" name="charityRep[money_requested]" placeholder= "Amt of $ requested*" min="5" max="10000" step="5">
             <input type = "submit" value= "Register as a Beneficiary">
             <a href= '/login'>Already a member?</a>
           </form>
