@@ -62,11 +62,11 @@ p{
 }
 
 #donationtable_ben_name{
-  width: 15%;
+  width: 30%;
 }
 
 #donationtable_email{
-  width: 23%;
+  width: 30%;
 }
 
 #donationtable_charity{
@@ -74,7 +74,7 @@ p{
 }
 
 #donationtable_charitable_cause{
-  width: 37%
+  width: 30%
 }
 
 #donationtable_amt_needed, #donationtable_amt_raised, #donationtable_amt_donated{
@@ -82,7 +82,7 @@ p{
 }
 
 #donationtable_date{
-  width: 12%
+  width: 10%
 }
 
 //Change background color to lightgrey when hover over table elements
@@ -117,92 +117,125 @@ font-weight: lighter;
   font-size: 12px;
 }
 
-@media only screen and (max-width: 1435px){
-  #donationtable_charitable_cause_td, #donationtable_charity_td{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+@media only screen and (max-width: 1630px){
+  #charitytable_ben_name_td, #charitytable_charity_td, #charitytable_charitable_cause_td{
+    word-break: break-all;
   }
-}
 
-@media only screen and (max-width: 1155px){
-  #charitytable_charitable_cause{
-    width: 33%;
+  #donationtable_ben_name{
+    width: 20%;
   }
-  #charitytable_charitable_cause_td, #charitytable_charity_td{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  #donationtable_charitable_cause{
-    width: 35%
-  }
-  #donationtable_email{
-    width: 21%
-  }
+
   #donationtable_email_td{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    word-break: break-all;
   }
+
 }
 
-@media only screen and (max-width: 1100px){
-  #donationtable_charitable_cause{
-    width: 33%
-  }
+@media only screen and (max-width: 1450px){
   #donationtable_email{
-    width: 19%
-  }
-  #donationtable_charity{
-    width: 28%
-  }
-  #donationtable_email_td{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    width: 25%;
   }
 }
 
-@media only screen and (max-width: 1040px){
-  #donationtable_charitable_cause{
-    width: 30%
+@media only screen and (max-width: 1330px){
+  #donationtable_ben_name{
+    width: 18%;
+  }
+  #donationtable_ben_name_td{
+    word-break: break-all;
+  }
+  #donationtable_date_td{
+    word-break: break-all;
   }
 
-  #donationtable_email{
-    width: 19%
-  }
-
-  #donationtable_charity{
-    width: 25%
-  }
-  #donationtable_email_td{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
 }
-
-@media only screen and (max-width: 980px){
-  #charitytable_charitable_cause{
-    width: 30%;
-  }
-  #donationtable_charitable_cause{
-    width: 28%
-  }
-  #donationtable_email{
-    width: 17%
-  }
-  #donationtable_charity{
-    width: 23%
-  }
-  #donationtable_email_td{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  #donor_container th, #donor_container td{
-    font-size: 13px;
-  }
-}
+// @media only screen and (max-width: 1435px){
+//   #donationtable_charitable_cause_td, #donationtable_charity_td{
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     white-space: nowrap;
+//   }
+// }
+//
+// @media only screen and (max-width: 1155px){
+//   #charitytable_charitable_cause{
+//     width: 33%;
+//   }
+//   #charitytable_charitable_cause_td, #charitytable_charity_td{
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     white-space: nowrap;
+//   }
+//   #donationtable_charitable_cause{
+//     width: 35%
+//   }
+//   #donationtable_email{
+//     width: 21%
+//   }
+//   #donationtable_email_td{
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     white-space: nowrap;
+//   }
+// }
+//
+// @media only screen and (max-width: 1100px){
+//   #donationtable_charitable_cause{
+//     width: 33%
+//   }
+//   #donationtable_email{
+//     width: 19%
+//   }
+//   #donationtable_charity{
+//     width: 28%
+//   }
+//   #donationtable_email_td{
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     white-space: nowrap;
+//   }
+// }
+//
+// @media only screen and (max-width: 1040px){
+//   #donationtable_charitable_cause{
+//     width: 30%
+//   }
+//
+//   #donationtable_email{
+//     width: 19%
+//   }
+//
+//   #donationtable_charity{
+//     width: 25%
+//   }
+//   #donationtable_email_td{
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     white-space: nowrap;
+//   }
+// }
+//
+// @media only screen and (max-width: 980px){
+//   #charitytable_charitable_cause{
+//     width: 30%;
+//   }
+//   #donationtable_charitable_cause{
+//     width: 28%
+//   }
+//   #donationtable_email{
+//     width: 17%
+//   }
+//   #donationtable_charity{
+//     width: 23%
+//   }
+//   #donationtable_email_td{
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     white-space: nowrap;
+//   }
+//
+//   #donor_container th, #donor_container td{
+//     font-size: 13px;
+//   }
+// }

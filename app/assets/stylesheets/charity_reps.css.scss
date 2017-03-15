@@ -39,6 +39,10 @@ th, td {
     font-weight: lighter;
 }
 
+td{
+  word-break: break-all;
+}
+
 //Change background color to lightgrey when hover over table elements
 tr:nth-child(even){background-color: #f2f2f2}
 tr:hover{background-color:lightgrey}

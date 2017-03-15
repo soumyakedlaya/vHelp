@@ -25,7 +25,7 @@
         <div id= "charityRep_reg_errors" class="ui-front">
             <span> Please correct <%= flash[:errors_count] %> error(s) on this page.</span>
             <% flash[:charityRep_reg_errors].each do |msg| %>
-              <li><%= msg %></li>
+              <li><span><%= msg %></span></li>
             <% end %>
         </div>
       <% end %>
