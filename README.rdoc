@@ -1,11 +1,1 @@
 
-
-Please go to this URL to view the app:
-http://35.165.69.187
-
-1. Sign up as a donor or sign up a charity you represent.
-2. If you already have an account, click sign in.
-3. If you are a donor, you will see a list of charities that have requested money. Enter the amount of money you wish to donate and click Ok for those you wish to donate to.
-3. If you are a charity representative, you will see a list of people who have donated money to your charity.
-
-== README
