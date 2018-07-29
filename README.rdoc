@@ -1,7 +1,12 @@
 
 JavaScript code for sliding registration forms and errors box: app/assets/javascripts/users.js
+
 HTML code: app/views
+
 Stylesheets: app/assets/stylesheets
+
 Controllers: app/controllers --> charity_reps_controller.rb, donors_controller.rb, sessions_controller.rb, users_controller.rb
+
 Models: app/models --> charity_rep.rb, donation.rb, donor.rb
+
 Routes: config/routes.rb
